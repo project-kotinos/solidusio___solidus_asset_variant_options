@@ -12,6 +12,7 @@ build_targets:
       - DB_PASSWORD=root
       - DB_HOST={{ .Containers.IP "db" }}
       - DATABASE_URL=postgres://root:root@{{ .Containers.IP "db" }}:5432/solidus_asset_variant_options_solidus_test
+      - DATABASE_CLEANER_ALLOW_REMOTE_DATABASE_URL=true
   dependencies:
       containers:
         db:
